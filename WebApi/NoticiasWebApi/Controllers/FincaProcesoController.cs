@@ -23,10 +23,11 @@ namespace ProyectoVinowWebApi.Controllers
             _Db = _DBcontext;
         }       
 
+     
         [HttpGet]
         public async Task<ActionResult<IEnumerable<FincaProceso>>> getFincaProcesos()
         {
-            return await _Db.FincaProceso.Include(x=>x.Finca).ToArrayAsync();
+            return await _Db.FincaProceso.Include(x => x.Finca).Include(f => f.Productos).Include(g=>g.Productos.Semilla).ToArrayAsync();
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<FincaProceso>> getFincaProceso(int id)
@@ -39,7 +40,7 @@ namespace ProyectoVinowWebApi.Controllers
         {
             try
             {
-                proceso.estado = "Creado";
+                proceso.estado = PropiedadesDeModelos.estadoCreado;
                 _Db.FincaProceso.Add(proceso);
                await _Db.SaveChangesAsync();
 
@@ -68,6 +69,8 @@ namespace ProyectoVinowWebApi.Controllers
            
         }
 
+
+
         [HttpDelete("{idProceso}")]
         public async Task<ActionResult> deleteFincaProceso(int idProceso)
         {
@@ -79,6 +82,34 @@ namespace ProyectoVinowWebApi.Controllers
             _Db.FincaProceso.Remove(fincaProceso);
            await _Db.SaveChangesAsync();
             return Ok();
+        }
+
+
+
+        public async Task<ActionResult> cambiarEstadoFinca(int idFinca, string estado)
+        {
+            var Finca = await _Db.Finca.FindAsync(idFinca);
+            if (Finca == null || Finca.estado==estado)
+            {
+                return BadRequest();
+            }
+
+            bool puedoEvaluar = Finca.estado == PropiedadesDeModelos.estadoCreado && estado == PropiedadesDeModelos.estadoEvaluado;
+            if (puedoEvaluar)
+            {
+                Finca.estado = PropiedadesDeModelos.estadoEvaluado ;
+               await _Db.SaveChangesAsync();
+                return Ok();
+            }
+            bool puedoInspeccionar = Finca.estado == PropiedadesDeModelos.estadoEvaluado && estado == PropiedadesDeModelos.estadoInspeccionado;
+            if (puedoInspeccionar)
+            {
+                Finca.estado = PropiedadesDeModelos.estadoInspeccionado;
+                await _Db.SaveChangesAsync();
+                return Ok();
+            }
+
+            return BadRequest();
         }
 
 

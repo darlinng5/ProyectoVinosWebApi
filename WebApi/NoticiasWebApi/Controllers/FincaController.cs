@@ -54,7 +54,7 @@ namespace NoticiasWebApi.Controllers
 
         public async Task<ActionResult> putFinca(int idFinca, Finca finca)
         {
-            if (idFinca == Convert.ToInt32(finca.idFinca))
+            if (idFinca == finca.idFinca)
             {
                 _Db.Entry(finca).State = EntityState.Modified;
                 await _Db.SaveChangesAsync();

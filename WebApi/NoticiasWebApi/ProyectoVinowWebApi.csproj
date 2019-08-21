@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20190820054823_Add relacion entre tabla proceso producto y producto semilla.cs" />
+    <Compile Remove="Migrations\20190820054823_Add relacion entre tabla proceso producto y producto semilla.Designer.cs" />
+    <Compile Remove="Migrations\20190820055316_Actualizada tabla producto.cs" />
+    <Compile Remove="Migrations\20190820055316_Actualizada tabla producto.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />

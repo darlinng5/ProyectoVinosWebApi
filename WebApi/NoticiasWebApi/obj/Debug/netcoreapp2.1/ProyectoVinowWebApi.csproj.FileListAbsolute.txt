@@ -17,7 +17,6 @@ C:\Users\User\Desktop\docs\Personal\u\2019\III Periodo\Ingenieria de Software\Pr
 C:\Users\User\Desktop\docs\Personal\u\2019\III Periodo\Ingenieria de Software\Proyecto\WebApi\NoticiasWebApi\bin\Debug\netcoreapp2.1\ProyectoVinowWebApi.runtimeconfig.dev.json
 C:\Users\User\Desktop\docs\Personal\u\2019\III Periodo\Ingenieria de Software\Proyecto\WebApi\NoticiasWebApi\bin\Debug\netcoreapp2.1\ProyectoVinowWebApi.dll
 C:\Users\User\Desktop\docs\Personal\u\2019\III Periodo\Ingenieria de Software\Proyecto\WebApi\NoticiasWebApi\bin\Debug\netcoreapp2.1\ProyectoVinowWebApi.pdb
-C:\Users\User\Desktop\docs\Personal\u\2019\III Periodo\Ingenieria de Software\Proyecto\WebApi\NoticiasWebApi\obj\Debug\netcoreapp2.1\ProyectoVinowWebApi.csprojAssemblyReference.cache
 C:\Users\User\Desktop\docs\Personal\u\2019\III Periodo\Ingenieria de Software\Proyecto\WebApi\NoticiasWebApi\obj\Debug\netcoreapp2.1\ProyectoVinowWebApi.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\docs\Personal\u\2019\III Periodo\Ingenieria de Software\Proyecto\WebApi\NoticiasWebApi\obj\Debug\netcoreapp2.1\ProyectoVinowWebApi.RazorAssemblyInfo.cache
 C:\Users\User\Desktop\docs\Personal\u\2019\III Periodo\Ingenieria de Software\Proyecto\WebApi\NoticiasWebApi\obj\Debug\netcoreapp2.1\ProyectoVinowWebApi.RazorAssemblyInfo.cs
@@ -26,3 +25,4 @@ C:\Users\User\Desktop\docs\Personal\u\2019\III Periodo\Ingenieria de Software\Pr
 C:\Users\User\Desktop\docs\Personal\u\2019\III Periodo\Ingenieria de Software\Proyecto\WebApi\NoticiasWebApi\obj\Debug\netcoreapp2.1\ProyectoVinowWebApi.RazorTargetAssemblyInfo.cache
 C:\Users\User\Desktop\docs\Personal\u\2019\III Periodo\Ingenieria de Software\Proyecto\WebApi\NoticiasWebApi\obj\Debug\netcoreapp2.1\ProyectoVinowWebApi.dll
 C:\Users\User\Desktop\docs\Personal\u\2019\III Periodo\Ingenieria de Software\Proyecto\WebApi\NoticiasWebApi\obj\Debug\netcoreapp2.1\ProyectoVinowWebApi.pdb
+C:\Users\User\Desktop\docs\Personal\u\2019\III Periodo\Ingenieria de Software\Proyecto\WebApi\NoticiasWebApi\obj\Debug\netcoreapp2.1\ProyectoVinowWebApi.csprojAssemblyReference.cache

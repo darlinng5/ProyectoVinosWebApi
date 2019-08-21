@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NoticiasWebApi;
+using NoticiasWebApi.Models;
 using ProyectoVinowWebApi.Models;
 
 namespace ProyectoVinowWebApi.Controllers
@@ -14,6 +15,7 @@ namespace ProyectoVinowWebApi.Controllers
     [ApiController]
     public class FincaEvaluacionController : ControllerBase
     {
+
         public readonly DBContext _Db;
         public FincaEvaluacionController(DBContext _DBcontext)
         {
@@ -32,14 +34,15 @@ namespace ProyectoVinowWebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<LLamadasAFinca>> postFincaEvaluacion(FincaEvaluacion evaluacion)
+        public async Task<ActionResult<FincaEvaluacion>> postFincaEvaluacion(FincaEvaluacion evaluacion)
         {
             try
             {
 
                 _Db.FincaEvaluacion.Add(evaluacion);
                 await _Db.SaveChangesAsync();
-
+                var fincaProceso = new FincaProcesoController(_Db);
+                await fincaProceso.cambiarEstadoFinca(evaluacion.idProceso, PropiedadesDeModelos.estadoEvaluado);
                 return Ok();
             }
             catch (Exception e)

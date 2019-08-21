@@ -24,9 +24,9 @@ namespace ProyectoVinowWebApi.Models
             public Map(EntityTypeBuilder<LLamadasAFinca> ebLLamadasAFinca)
             {
                 ebLLamadasAFinca.HasKey(x => x.idLLamada);
-                ebLLamadasAFinca.Property(x => x.fechaLLamada).HasColumnName(PropiedadesDeModelos.fechaLLamadaFinca).HasColumnType("Datetime");
-                ebLLamadasAFinca.Property(x => x.observacion).HasColumnName(PropiedadesDeModelos.observacionLLamadaFinca).HasMaxLength(20);
-                ebLLamadasAFinca.Property(x => x.fechaVisita).HasColumnName(PropiedadesDeModelos.fechaVisitaLLamadaFinca).HasColumnType("Datetime");
+                ebLLamadasAFinca.Property(x => x.fechaLLamada).HasColumnName(PropiedadesDeModelos.fechaLLamada).HasColumnType("Datetime");
+                ebLLamadasAFinca.Property(x => x.observacion).HasColumnName(PropiedadesDeModelos.observacion).HasMaxLength(int.MaxValue);
+                ebLLamadasAFinca.Property(x => x.fechaVisita).HasColumnName(PropiedadesDeModelos.fechaVisita).HasColumnType("Datetime");
                 ebLLamadasAFinca.Property(x => x.idProceso).HasColumnName("idProceso").HasColumnType("int");
                 ebLLamadasAFinca.HasOne(x => x.FincaProceso);
 

@@ -26,11 +26,11 @@ namespace NoticiasWebApi.Models
             public Map(EntityTypeBuilder<Finca> ebFinca)
             {
                 ebFinca.HasKey(x => x.idFinca);
-                ebFinca.Property(x => x.nombre).HasColumnName(PropiedadesDeModelos.nombreFinca).HasMaxLength(20);
-                ebFinca.Property(x => x.descripcion).HasColumnName(PropiedadesDeModelos.descripcionFinca).HasMaxLength(150);
-                ebFinca.Property(x => x.departamento).HasColumnName(PropiedadesDeModelos.departamentoFinca).HasMaxLength(25);
-                ebFinca.Property(x => x.municipio).HasColumnName(PropiedadesDeModelos.municipioFinca).HasMaxLength(25);
-                ebFinca.Property(x => x.estado).HasColumnName(PropiedadesDeModelos.estadoFinca).HasMaxLength(15);
+                ebFinca.Property(x => x.nombre).HasColumnName(PropiedadesDeModelos.nombre).HasMaxLength(20);
+                ebFinca.Property(x => x.descripcion).HasColumnName(PropiedadesDeModelos.descripcion).HasMaxLength(150);
+                ebFinca.Property(x => x.departamento).HasColumnName(PropiedadesDeModelos.departamento).HasMaxLength(25);
+                ebFinca.Property(x => x.municipio).HasColumnName(PropiedadesDeModelos.municipio).HasMaxLength(25);
+                ebFinca.Property(x => x.estado).HasColumnName(PropiedadesDeModelos.estado).HasMaxLength(15);
             }
         }
 

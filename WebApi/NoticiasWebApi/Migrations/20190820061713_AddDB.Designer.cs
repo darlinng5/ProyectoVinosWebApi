@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NoticiasWebApi;
 
 namespace NoticiasWebApi.Migrations
 {
     [DbContext(typeof(DBContext))]
-    partial class DBContextModelSnapshot : ModelSnapshot
+    [Migration("20190820061713_AddDB")]
+    partial class AddDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -100,7 +102,7 @@ namespace NoticiasWebApi.Migrations
                         .HasMaxLength(15);
 
                     b.Property<int>("idSemilla")
-                        .HasColumnName("idSemilla")
+                        .HasColumnName("idProceso")
                         .HasColumnType("int");
 
                     b.Property<string>("nombre")
@@ -119,10 +121,6 @@ namespace NoticiasWebApi.Migrations
                     b.Property<int>("idEvaluacion")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("estado")
-                        .HasColumnName("estado")
-                        .HasMaxLength(20);
 
                     b.Property<DateTime>("fechaInspeccion")
                         .HasColumnName("fechaInspeccion")

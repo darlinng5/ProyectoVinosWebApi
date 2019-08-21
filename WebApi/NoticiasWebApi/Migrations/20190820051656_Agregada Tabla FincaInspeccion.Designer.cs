@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NoticiasWebApi;
 
 namespace NoticiasWebApi.Migrations
 {
     [DbContext(typeof(DBContext))]
-    partial class DBContextModelSnapshot : ModelSnapshot
+    [Migration("20190820051656_Agregada Tabla FincaInspeccion")]
+    partial class AgregadaTablaFincaInspeccion
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -68,10 +70,6 @@ namespace NoticiasWebApi.Migrations
                         .HasColumnName("idFinca")
                         .HasColumnType("int");
 
-                    b.Property<int>("idProducto")
-                        .HasColumnName("idProducto")
-                        .HasColumnType("int");
-
                     b.Property<string>("nombre")
                         .HasColumnName("nombre")
                         .HasMaxLength(20);
@@ -79,8 +77,6 @@ namespace NoticiasWebApi.Migrations
                     b.HasKey("idProceso");
 
                     b.HasIndex("idFinca");
-
-                    b.HasIndex("idProducto");
 
                     b.ToTable("FincaProceso");
                 });
@@ -91,25 +87,15 @@ namespace NoticiasWebApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("descripcion")
-                        .HasColumnName("descripcion")
-                        .HasMaxLength(150);
+                    b.Property<string>("descripcion");
 
-                    b.Property<string>("estado")
-                        .HasColumnName("estado")
-                        .HasMaxLength(15);
+                    b.Property<string>("estado");
 
-                    b.Property<int>("idSemilla")
-                        .HasColumnName("idSemilla")
-                        .HasColumnType("int");
+                    b.Property<string>("nombre");
 
-                    b.Property<string>("nombre")
-                        .HasColumnName("nombre")
-                        .HasMaxLength(20);
+                    b.Property<string>("tipoSemilla");
 
                     b.HasKey("idProducto");
-
-                    b.HasIndex("idSemilla");
 
                     b.ToTable("Productos");
                 });
@@ -119,10 +105,6 @@ namespace NoticiasWebApi.Migrations
                     b.Property<int>("idEvaluacion")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("estado")
-                        .HasColumnName("estado")
-                        .HasMaxLength(20);
 
                     b.Property<DateTime>("fechaInspeccion")
                         .HasColumnName("fechaInspeccion")
@@ -213,47 +195,11 @@ namespace NoticiasWebApi.Migrations
                     b.ToTable("LlamadasAFinca");
                 });
 
-            modelBuilder.Entity("ProyectoVinowWebApi.Models.Semilla", b =>
-                {
-                    b.Property<int>("idSemilla")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("descripcion")
-                        .HasColumnName("descripcion")
-                        .HasMaxLength(150);
-
-                    b.Property<string>("estado")
-                        .HasColumnName("estado")
-                        .HasMaxLength(15);
-
-                    b.Property<string>("nombre")
-                        .HasColumnName("nombre")
-                        .HasMaxLength(40);
-
-                    b.HasKey("idSemilla");
-
-                    b.ToTable("Semilla");
-                });
-
             modelBuilder.Entity("NoticiasWebApi.Models.FincaProceso", b =>
                 {
                     b.HasOne("NoticiasWebApi.Models.Finca", "Finca")
                         .WithMany()
                         .HasForeignKey("idFinca")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("NoticiasWebApi.Models.Productos", "Productos")
-                        .WithMany()
-                        .HasForeignKey("idProducto")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("NoticiasWebApi.Models.Productos", b =>
-                {
-                    b.HasOne("ProyectoVinowWebApi.Models.Semilla", "Semilla")
-                        .WithMany()
-                        .HasForeignKey("idSemilla")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

@@ -10,23 +10,26 @@ namespace NoticiasWebApi
         {
             
         }
+        public virtual DbSet<Productos> Productos { get; set; }
+        public virtual DbSet<Semilla> Semilla { get; set; }
         public virtual DbSet<Finca> Finca { get; set; }
         public virtual DbSet<FincaProceso> FincaProceso { get; set; }
         public virtual DbSet<LLamadasAFinca> LlamadasAFinca { get; set; }
         public virtual DbSet<FincaEvaluacion> FincaEvaluacion { get; set; }
-        public virtual DbSet<Productos> Productos { get; set; }
-        public virtual DbSet<Finca> Noticia { get; set; }
-        public virtual DbSet<Autor> Autor { get; set;}
-        public virtual DbSet<Nombres> Nombres { get; set; }
+        public virtual DbSet<FincaInspeccion> FincaInspeccion { get; set; }
+
+
 
 
         protected override void OnModelCreating(ModelBuilder modelB)
         {
+            new Productos.Map(modelB.Entity<Productos>());
+            new Semilla.Map(modelB.Entity<Semilla>());
             new Finca.Map(modelB.Entity<Finca>());
             new FincaProceso.Map(modelB.Entity<FincaProceso>());
             new LLamadasAFinca.Map(modelB.Entity<LLamadasAFinca>());
             new FincaEvaluacion.Map(modelB.Entity<FincaEvaluacion>());
-            new Autor.Map(modelB.Entity<Autor>());
+            new FincaInspeccion.Map(modelB.Entity<FincaInspeccion>());
             base.OnModelCreating(modelB);
         }
     }

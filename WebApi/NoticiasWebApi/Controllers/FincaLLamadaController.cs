@@ -28,7 +28,8 @@ namespace ProyectoVinowWebApi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<LLamadasAFinca>> getFincaLLamada(int id)
         {
-            return await _Db.LlamadasAFinca.Include(x => x.FincaProceso).FirstOrDefaultAsync(i => i.idLLamada == id);
+           
+            return await _Db.LlamadasAFinca.Include(x => x.FincaProceso).FirstOrDefaultAsync(i => i.idProceso == id);
         }
 
         [HttpPost]

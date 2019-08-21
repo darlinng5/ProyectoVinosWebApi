@@ -7,35 +7,23 @@ namespace NoticiasWebApi.Models
 {
     public static class PropiedadesDeModelos
     {
-        public static string nombreFinca = "nombre";
-        public static string descripcionFinca = "descripcion";
-        public static string departamentoFinca = "departamento";
-        public static string municipioFinca = "municipio";
-        public static string estadoFinca = "estado";
-
-
-        public static string nombreProducto = "nombre";
-        public static string descripcionProducto = "descripcion";
-        public static string tipoSemillaProducto = "tipoSemilla";
-        public static string estadoProducto = "estado";
-
-        public static string nombreFincaProceso = "nombre";
-        public static string FechaInicioFincaProceso = "fechaInicio";
-        public static string estadoFincaProceso = "estado";
-
-
-        public static string idLLamadaLLamadaFinca = "idLLamada";
-        public static string fechaLLamadaFinca = "fechaLLamada";
-        public static string observacionLLamadaFinca = "Observacion";
-        public static string fechaVisitaLLamadaFinca = "fechaVisita";
-
+        public static string nombre = "nombre";
+        public static string descripcion = "descripcion";
+        public static string departamento = "departamento";
+        public static string municipio = "municipio";
+        public static string estado = "estado";
+        public static string tipoSemilla = "tipoSemilla";
+        public static string FechaInicio = "fechaInicio";
+        public static string fechaLLamada = "fechaLLamada";
+        public static string observacion = "Observacion";
+        public static string fechaVisita = "fechaVisita";
         public static string estadoCreado = "Creado";
-
-
-        public static string idFincaEvaluacion = "idEvaluacion";
-        public static string fechaEvaluacionFincaEvaluacion = "fechaEvaluacion";
-        public static string valoracionTerrenoFincaEvaluacion = "valoracionTerreno";
-        public static string fechaInspeccionFincaEvaluacion = "fechaInspeccion";
+        public static string estadoEvaluado = "Evaluado";
+        public static string estadoInspeccionado = "Inspeccionado";
+        public static string fechaEvaluacion = "fechaEvaluacion";
+        public static string valoracionTerreno = "valoracionTerreno";
+        public static string fechaInspeccion = "fechaInspeccion";
+        public static string fechaCompra = "fechaCompra";
 
 
 

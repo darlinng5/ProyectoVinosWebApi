@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using ProyectoVinowWebApi.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,21 +11,23 @@ namespace NoticiasWebApi.Models
 {
     public class Productos
     {
-        [Key]
+      
         public int idProducto { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }
-        public string tipoSemilla { get; set; }
         public string estado { get; set; }
+        public int idSemilla { get; set; }
+        public Semilla Semilla { get; set; }
         public class Map
         {
-            public Map(EntityTypeBuilder<Productos> ebProductos)
+            public Map(EntityTypeBuilder<Productos> ebProducto)
             {
-                ebProductos.HasKey(x => x.idProducto);
-                ebProductos.Property(x => x.nombre).HasColumnName(PropiedadesDeModelos.nombreProducto).HasMaxLength(20);
-                ebProductos.Property(x => x.descripcion).HasColumnName(PropiedadesDeModelos.descripcionProducto).HasMaxLength(150);
-                ebProductos.Property(x => x.tipoSemilla).HasColumnName(PropiedadesDeModelos.tipoSemillaProducto).HasMaxLength(25);
-                ebProductos.Property(x => x.estado).HasColumnName(PropiedadesDeModelos.estadoProducto).HasMaxLength(15);
+                ebProducto.HasKey(x => x.idProducto);
+                ebProducto.Property(x => x.nombre).HasColumnName(PropiedadesDeModelos.nombre).HasMaxLength(20);
+                ebProducto.Property(x => x.descripcion).HasColumnName(PropiedadesDeModelos.descripcion).HasMaxLength(150);
+                ebProducto.Property(x => x.estado).HasColumnName(PropiedadesDeModelos.estado).HasMaxLength(15);
+                ebProducto.Property(x => x.idSemilla).HasColumnName("idSemilla").HasColumnType("int");
+                ebProducto.HasOne(x => x.Semilla);
             }
         }
     }

@@ -86,25 +86,25 @@ namespace ProyectoVinowWebApi.Controllers
 
 
 
-        public async Task<ActionResult> cambiarEstadoFinca(int idFinca, string estado)
+        public async Task<ActionResult> cambiarEstadoFincaProceso(int idFincaProceso, string estado)
         {
-            var Finca = await _Db.Finca.FindAsync(idFinca);
-            if (Finca == null || Finca.estado==estado)
+            var FincaProceso = await _Db.FincaProceso.FindAsync(idFincaProceso);
+            if (FincaProceso == null || FincaProceso.estado==estado)
             {
                 return BadRequest();
             }
 
-            bool puedoEvaluar = Finca.estado == PropiedadesDeModelos.estadoCreado && estado == PropiedadesDeModelos.estadoEvaluado;
+            bool puedoEvaluar = FincaProceso.estado == PropiedadesDeModelos.estadoCreado && estado == PropiedadesDeModelos.estadoEvaluado;
             if (puedoEvaluar)
             {
-                Finca.estado = PropiedadesDeModelos.estadoEvaluado ;
+                FincaProceso.estado = PropiedadesDeModelos.estadoEvaluado ;
                await _Db.SaveChangesAsync();
                 return Ok();
             }
-            bool puedoInspeccionar = Finca.estado == PropiedadesDeModelos.estadoEvaluado && estado == PropiedadesDeModelos.estadoInspeccionado;
+            bool puedoInspeccionar = FincaProceso.estado == PropiedadesDeModelos.estadoEvaluado && estado == PropiedadesDeModelos.estadoInspeccionado;
             if (puedoInspeccionar)
             {
-                Finca.estado = PropiedadesDeModelos.estadoInspeccionado;
+                FincaProceso.estado = PropiedadesDeModelos.estadoInspeccionado;
                 await _Db.SaveChangesAsync();
                 return Ok();
             }

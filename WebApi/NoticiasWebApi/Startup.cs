@@ -11,6 +11,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NoticiasWebApi.Services;
+using ProyectoVinowWebApi.AplicationServices;
+using ProyectoVinowWebApi.AppServices;
+using ProyectoVinowWebApi.Domains;
 
 namespace NoticiasWebApi
 {
@@ -32,7 +35,8 @@ namespace NoticiasWebApi
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
+            services.AddScoped<FincaAppDomain>();
+            services.AddScoped<FincaAppServices>();
             services.AddDbContext<DBContext>(opciones => opciones.UseSqlServer("Data Source=TESORERIA\\LENOVO2;Initial Catalog=VinosDB;Trusted_Connection=True"));
             services.AddTransient<ProyectoServices, ProyectoServices>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);

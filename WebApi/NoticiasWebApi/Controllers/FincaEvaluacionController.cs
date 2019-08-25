@@ -28,21 +28,24 @@ namespace ProyectoVinowWebApi.Controllers
             return await _Db.FincaEvaluacion.Include(x => x.FincaProceso).ToArrayAsync();
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<FincaEvaluacion>> getFincaEvaluacion(int id)
+        public async Task<ActionResult<IEnumerable<FincaEvaluacion>>> getFincaEvaluacion(int id)
         {
-            return await _Db.FincaEvaluacion.Include(x => x.FincaProceso).FirstOrDefaultAsync(i => i.idEvaluacion == id);
+
+            return await _Db.FincaEvaluacion.Where(x => x.idProceso == id).OrderByDescending(z => z.idEvaluacion).ToArrayAsync();
         }
+
 
         [HttpPost]
         public async Task<ActionResult<FincaEvaluacion>> postFincaEvaluacion(FincaEvaluacion evaluacion)
         {
             try
             {
+                evaluacion.estado = PropiedadesDeModelos.estadoCreado;
 
                 _Db.FincaEvaluacion.Add(evaluacion);
                 await _Db.SaveChangesAsync();
                 var fincaProceso = new FincaProcesoController(_Db);
-                await fincaProceso.cambiarEstadoFinca(evaluacion.idProceso, PropiedadesDeModelos.estadoEvaluado);
+                await fincaProceso.cambiarEstadoFincaProceso(evaluacion.idProceso, PropiedadesDeModelos.estadoEvaluado);
                 return Ok();
             }
             catch (Exception e)

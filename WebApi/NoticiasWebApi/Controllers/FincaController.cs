@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NoticiasWebApi.Models;
 using NoticiasWebApi.Services;
+using ProyectoVinowWebApi.AppServices;
 
 namespace NoticiasWebApi.Controllers
 {
@@ -14,10 +15,14 @@ namespace NoticiasWebApi.Controllers
     [ApiController]
     public class FincaController : ControllerBase
     {
-        public readonly DBContext _Db;
-        public FincaController(DBContext _DBcontext)
+        private readonly DBContext _Db;
+        private readonly FincaAppServices _fincaAppService;
+        public FincaController(DBContext _DBcontext, FincaAppServices fincaAppServices)
         {
             _Db = _DBcontext;
+            _fincaAppService = fincaAppServices;
+
+
         }
 
         [HttpGet]
@@ -34,19 +39,16 @@ namespace NoticiasWebApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Finca>> postFinca(Finca finca)
         {
-            try
+            var  respuesta = await  _fincaAppService.RegistrarFinca(finca);
+            if (respuesta == null)
             {
-                finca.estado = PropiedadesDeModelos.estadoCreado;
-                _Db.Finca.Add(finca);
-                await _Db.SaveChangesAsync();
-
-                return Ok();
+                return Ok("Exito al guardar la finca");
             }
-            catch (Exception e)
+            else
             {
-
-                return BadRequest(e);
+                return BadRequest(respuesta);
             }
+
 
         }
 
@@ -54,6 +56,7 @@ namespace NoticiasWebApi.Controllers
 
         public async Task<ActionResult> putFinca(int idFinca, Finca finca)
         {
+
             if (idFinca == finca.idFinca)
             {
                 _Db.Entry(finca).State = EntityState.Modified;

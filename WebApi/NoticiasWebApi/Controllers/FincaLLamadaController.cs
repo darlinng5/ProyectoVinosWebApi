@@ -26,10 +26,10 @@ namespace ProyectoVinowWebApi.Controllers
             return await _Db.LlamadasAFinca.Include(x => x.FincaProceso).ToArrayAsync();
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<LLamadasAFinca>> getFincaLLamada(int id)
+        public async Task<ActionResult<IEnumerable<LLamadasAFinca>>> getFincaLLamada(int id)
         {
-           
-            return await _Db.LlamadasAFinca.Include(x => x.FincaProceso).FirstOrDefaultAsync(i => i.idProceso == id);
+
+            return await _Db.LlamadasAFinca.Where(x => x.idProceso == id).OrderByDescending(z => z.idLLamada).ToArrayAsync();
         }
 
         [HttpPost]

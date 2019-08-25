@@ -11,6 +11,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NoticiasWebApi.Services;
+using ProyectoVinowWebApi.AplicationServices;
+using ProyectoVinowWebApi.AppServices;
+using ProyectoVinowWebApi.Domains;
 
 namespace NoticiasWebApi
 {
@@ -33,7 +36,12 @@ namespace NoticiasWebApi
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+
+        
+            services.AddScoped<FincaAppDomain>();
+            services.AddScoped<FincaAppServices>();
             services.AddDbContext<DBContext>(opciones => opciones.UseSqlServer("Data Source=MSI;Initial Catalog=VinosDB;Trusted_Connection=True"));
+
             services.AddTransient<ProyectoServices, ProyectoServices>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
             //  services.AddMvc().AddJsonOptions(options => { options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore; });

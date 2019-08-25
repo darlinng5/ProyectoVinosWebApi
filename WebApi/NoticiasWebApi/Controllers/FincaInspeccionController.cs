@@ -27,9 +27,10 @@ namespace ProyectoVinowWebApi.Controllers
              return await _Db.FincaInspeccion.Include(x => x.FincaProceso).ToArrayAsync();
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<FincaInspeccion>> getFincaInspeccion(int id)
+        public async Task<ActionResult<IEnumerable<FincaInspeccion>>> getFincaInspeccion(int id)
         {
-            return await _Db.FincaInspeccion.Include(x => x.FincaProceso).FirstOrDefaultAsync(i => i.idInspeccion == id);
+
+            return await _Db.FincaInspeccion.Where(x => x.idProceso == id).OrderByDescending(z => z.idInspeccion).ToArrayAsync();
         }
 
         [HttpPost]
@@ -41,7 +42,7 @@ namespace ProyectoVinowWebApi.Controllers
                 _Db.FincaInspeccion.Add(inspeccion);
                 await _Db.SaveChangesAsync();
                 var fincaProceso = new FincaProcesoController(_Db);
-                await fincaProceso.cambiarEstadoFinca(inspeccion.idProceso, PropiedadesDeModelos.estadoInspeccionado);
+                await fincaProceso.cambiarEstadoFincaProceso(inspeccion.idProceso, PropiedadesDeModelos.estadoInspeccionado);
 
                 return Ok();
             }

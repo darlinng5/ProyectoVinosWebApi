@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NoticiasWebApi;
 
 namespace NoticiasWebApi.Migrations
 {
     [DbContext(typeof(DBContext))]
-    partial class DBContextModelSnapshot : ModelSnapshot
+    [Migration("20190821033314_NuevaBasedeDatos")]
+    partial class NuevaBasedeDatos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -114,45 +116,6 @@ namespace NoticiasWebApi.Migrations
                     b.ToTable("Productos");
                 });
 
-            modelBuilder.Entity("ProyectoVinowWebApi.Models.FincaCompra", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<decimal>("cantidad")
-                        .HasConversion(new ValueConverter<decimal, decimal>(v => default(decimal), v => default(decimal), new ConverterMappingHints(precision: 38, scale: 17)))
-                        .HasColumnName("cantidad")
-                        .HasColumnType("decimal");
-
-                    b.Property<int>("esPagoAlContado")
-                        .HasColumnType("int");
-
-                    b.Property<int>("idProceso")
-                        .HasColumnName("idProceso")
-                        .HasColumnType("int");
-
-                    b.Property<int>("idProductoPresentacion")
-                        .HasColumnName("idProductoPresentacion");
-
-                    b.Property<string>("observacion")
-                        .HasColumnName("Observacion")
-                        .HasMaxLength(150);
-
-                    b.Property<decimal>("valorUnitario")
-                        .HasConversion(new ValueConverter<decimal, decimal>(v => default(decimal), v => default(decimal), new ConverterMappingHints(precision: 38, scale: 17)))
-                        .HasColumnName("valorUnitario")
-                        .HasColumnType("decimal");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("idProceso");
-
-                    b.HasIndex("idProductoPresentacion");
-
-                    b.ToTable("FincaCompra");
-                });
-
             modelBuilder.Entity("ProyectoVinowWebApi.Models.FincaEvaluacion", b =>
                 {
                     b.Property<int>("idEvaluacion")
@@ -252,21 +215,6 @@ namespace NoticiasWebApi.Migrations
                     b.ToTable("LlamadasAFinca");
                 });
 
-            modelBuilder.Entity("ProyectoVinowWebApi.Models.ProductoPresentacion", b =>
-                {
-                    b.Property<int>("idProductoPresentacion")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("nombre")
-                        .HasColumnName("nombre")
-                        .HasMaxLength(50);
-
-                    b.HasKey("idProductoPresentacion");
-
-                    b.ToTable("ProductoPresentacion");
-                });
-
             modelBuilder.Entity("ProyectoVinowWebApi.Models.Semilla", b =>
                 {
                     b.Property<int>("idSemilla")
@@ -308,19 +256,6 @@ namespace NoticiasWebApi.Migrations
                     b.HasOne("ProyectoVinowWebApi.Models.Semilla", "Semilla")
                         .WithMany()
                         .HasForeignKey("idSemilla")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("ProyectoVinowWebApi.Models.FincaCompra", b =>
-                {
-                    b.HasOne("NoticiasWebApi.Models.FincaProceso", "FincaProceso")
-                        .WithMany()
-                        .HasForeignKey("idProceso")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("ProyectoVinowWebApi.Models.ProductoPresentacion", "ProductoPresentacion")
-                        .WithMany()
-                        .HasForeignKey("idProductoPresentacion")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

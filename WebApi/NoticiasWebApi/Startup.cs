@@ -35,9 +35,13 @@ namespace NoticiasWebApi
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+
+
+        
             services.AddScoped<FincaAppDomain>();
             services.AddScoped<FincaAppServices>();
-            services.AddDbContext<DBContext>(opciones => opciones.UseSqlServer("Data Source=TESORERIA\\LENOVO2;Initial Catalog=VinosDB;Trusted_Connection=True"));
+            services.AddDbContext<DBContext>(opciones => opciones.UseSqlServer("Data Source=MSI;Initial Catalog=VinosDB;Trusted_Connection=True"));
+
             services.AddTransient<ProyectoServices, ProyectoServices>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
             //  services.AddMvc().AddJsonOptions(options => { options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore; });

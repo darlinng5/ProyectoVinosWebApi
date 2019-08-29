@@ -26,3 +26,5 @@ C:\Users\User\Desktop\docs\Personal\u\2019\III Periodo\Ingenieria de Software\Pr
 C:\Users\User\Desktop\docs\Personal\u\2019\III Periodo\Ingenieria de Software\Proyecto\WebApi\NoticiasWebApi\obj\Debug\netcoreapp2.1\ProyectoVinowWebApi.RazorTargetAssemblyInfo.cache
 C:\Users\User\Desktop\docs\Personal\u\2019\III Periodo\Ingenieria de Software\Proyecto\WebApi\NoticiasWebApi\obj\Debug\netcoreapp2.1\ProyectoVinowWebApi.dll
 C:\Users\User\Desktop\docs\Personal\u\2019\III Periodo\Ingenieria de Software\Proyecto\WebApi\NoticiasWebApi\obj\Debug\netcoreapp2.1\ProyectoVinowWebApi.pdb
+
+

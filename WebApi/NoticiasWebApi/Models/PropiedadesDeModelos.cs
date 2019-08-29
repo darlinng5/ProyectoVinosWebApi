@@ -24,6 +24,9 @@ namespace NoticiasWebApi.Models
         public static string valoracionTerreno = "valoracionTerreno";
         public static string fechaInspeccion = "fechaInspeccion";
         public static string fechaCompra = "fechaCompra";
+        public static string valorUnitario = "valorUnitario";
+        public static string cantidad = "cantidad";
+        public static string esPagoAlContado = "esPagoAlContado";
 
 
 

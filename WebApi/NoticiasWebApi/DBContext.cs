@@ -18,11 +18,14 @@ namespace NoticiasWebApi
         public virtual DbSet<FincaEvaluacion> FincaEvaluacion { get; set; }
         public virtual DbSet<FincaInspeccion> FincaInspeccion { get; set; }
 
-
+        public virtual DbSet<ProductoPresentacion> ProductoPresentacion { get; set; }
+        public virtual DbSet<FincaCompra> FincaCompra { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelB)
         {
+            new ProductoPresentacion.Map(modelB.Entity<ProductoPresentacion>());
+            new FincaCompra.Map(modelB.Entity<FincaCompra>());
             new Productos.Map(modelB.Entity<Productos>());
             new Semilla.Map(modelB.Entity<Semilla>());
             new Finca.Map(modelB.Entity<Finca>());

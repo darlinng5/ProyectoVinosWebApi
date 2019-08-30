@@ -10,12 +10,25 @@ namespace ProyectoVinowWebApi.Domains
     {
         public string RegistrarFinca(Finca finca)
         {
-            int maximoCarctereseParaNombre = 5;
 
-            if (finca.nombre.Count() > maximoCarctereseParaNombre)
+
+            int maximoCarctereseParaNombre = 20;
+            var nombreEsDemasiadoLargo = finca.nombre.Count() > maximoCarctereseParaNombre;
+            var nombreEstaEnBlanco = finca.nombre == string.Empty;
+
+            if (nombreEstaEnBlanco)
+            {
+                return "El nombre no puede ser nulo.";
+            }
+
+            if (nombreEsDemasiadoLargo)
             {
                 return "El nombre contiene mas de "+maximoCarctereseParaNombre+" para nombre";
             }
+
+            
+
+
             return null;
         }
 

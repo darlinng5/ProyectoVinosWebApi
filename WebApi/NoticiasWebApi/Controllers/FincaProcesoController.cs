@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using NoticiasWebApi;
 using NoticiasWebApi.Models;
 using NoticiasWebApi.Services;
-
+using ProyectoVinowWebApi.AppServices;
 
 namespace ProyectoVinowWebApi.Controllers
 {
@@ -18,9 +18,11 @@ namespace ProyectoVinowWebApi.Controllers
     {
        
         public readonly DBContext _Db;
-        public FincaProcesoController(DBContext _DBcontext)
+        public readonly ProcesoAppServices _procesoAppServices;
+        public FincaProcesoController(DBContext _DBcontext, ProcesoAppServices procesoAppServices)
         {
             _Db = _DBcontext;
+            _procesoAppServices = procesoAppServices;
         }       
 
      
@@ -38,20 +40,15 @@ namespace ProyectoVinowWebApi.Controllers
         [HttpPost]
         public async Task<ActionResult<FincaProceso>> postFincaProceso(FincaProceso proceso)
         {
-            try
+            var respuesta = await _procesoAppServices.RegistrarFinca(proceso);
+            if (respuesta == null)
             {
-                proceso.estado = PropiedadesDeModelos.estadoCreado;
-                _Db.FincaProceso.Add(proceso);
-               await _Db.SaveChangesAsync();
-
-                return Ok();
+                return Ok("Guardado exitosamente");
             }
-            catch (Exception e)
+            else
             {
-
-                return BadRequest(e);
-            }
-           
+                return BadRequest(respuesta);
+            }           
         }
 
         [HttpPut("{idFinca}")]

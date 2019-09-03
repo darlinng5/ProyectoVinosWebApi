@@ -14,7 +14,7 @@ namespace NoticiasWebApi
         public virtual DbSet<Semilla> Semilla { get; set; }
         public virtual DbSet<Finca> Finca { get; set; }
         public virtual DbSet<FincaProceso> FincaProceso { get; set; }
-        public virtual DbSet<LLamadasAFinca> LlamadasAFinca { get; set; }
+        public virtual DbSet<LLamadasAFinca> LLamadasAFinca { get; set; }
         public virtual DbSet<FincaEvaluacion> FincaEvaluacion { get; set; }
         public virtual DbSet<FincaInspeccion> FincaInspeccion { get; set; }
 

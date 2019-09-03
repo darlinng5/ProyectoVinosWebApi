@@ -43,7 +43,7 @@ namespace NoticiasWebApi.Services
 
                 return FincaBuscada;
             }
-            catch (Exception error)
+            catch (Exception)
             {
                 return new Finca();
             }

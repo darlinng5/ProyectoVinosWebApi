@@ -9,6 +9,12 @@
     <Compile Remove="Migrations\20190820054823_Add relacion entre tabla proceso producto y producto semilla.Designer.cs" />
     <Compile Remove="Migrations\20190820055316_Actualizada tabla producto.cs" />
     <Compile Remove="Migrations\20190820055316_Actualizada tabla producto.Designer.cs" />
+    <Compile Remove="Migrations\20190828014629_AgregandoTablaFincaCompraYFincaCompra.cs" />
+    <Compile Remove="Migrations\20190828014629_AgregandoTablaFincaCompraYFincaCompra.Designer.cs" />
+    <Compile Remove="Migrations\20190828015242_ActualizandoTableFincaCompra.cs" />
+    <Compile Remove="Migrations\20190828015242_ActualizandoTableFincaCompra.Designer.cs" />
+    <Compile Remove="Migrations\20190828015741_AgregadaTablaFCompra.cs" />
+    <Compile Remove="Migrations\20190828015741_AgregadaTablaFCompra.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

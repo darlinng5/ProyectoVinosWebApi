@@ -39,10 +39,10 @@ namespace ProyectoVinowWebApi.Controllers
             try
             {
 
-                _Db.FincaInspeccion.Add(inspeccion);
-                await _Db.SaveChangesAsync();
-                var fincaProceso = new FincaProcesoController(_Db);
-                await fincaProceso.cambiarEstadoFincaProceso(inspeccion.idProceso, PropiedadesDeModelos.estadoInspeccionado);
+                //_Db.FincaInspeccion.Add(inspeccion);
+                //await _Db.SaveChangesAsync();
+                //var fincaProceso = new FincaProcesoController(_Db);
+                //await fincaProceso.cambiarEstadoFincaProceso(inspeccion.idProceso, PropiedadesDeModelos.estadoInspeccionado);
 
                 return Ok();
             }

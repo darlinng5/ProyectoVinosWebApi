@@ -10,6 +10,12 @@ namespace ProyectoVinowWebApi.Domains
     {
         public string RegistrarFinca(Finca finca)
         {
+            int maximoCarctereseParaNombre = 10;
+
+            if (finca == null)
+            {
+                return "Por favor ingrese datos para la finca";
+            }
 
 
             int maximoCarctereseParaNombre = 20;
@@ -23,11 +29,13 @@ namespace ProyectoVinowWebApi.Domains
 
             if (nombreEsDemasiadoLargo)
             {
-                return "El nombre contiene mas de "+maximoCarctereseParaNombre+" para nombre";
+                return "El nombre contiene mas de "+maximoCarctereseParaNombre + " Caracteres";
             }
 
-            
-
+            if (finca.estado != "Iniciado")
+            {
+                return "El estado de la finca no es correcto";
+            }
 
             return null;
         }

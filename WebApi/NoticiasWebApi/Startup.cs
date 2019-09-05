@@ -40,7 +40,9 @@ namespace NoticiasWebApi
         
             services.AddScoped<FincaAppDomain>();
             services.AddScoped<FincaAppServices>();
-            services.AddDbContext<DBContext>(opciones => opciones.UseSqlServer("Data Source=MSI;Initial Catalog=VinosDB;Trusted_Connection=True"));
+            services.AddScoped<LlamadaAppServices>();
+            services.AddScoped<LlamadaFincaDomain>();
+            services.AddDbContext<DBContext>(opciones => opciones.UseSqlServer("Data Source=DESKTOP-KFVMJ2G;Initial Catalog=VinosDB;Trusted_Connection=True"));
 
             services.AddTransient<ProyectoServices, ProyectoServices>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
@@ -73,9 +75,9 @@ namespace NoticiasWebApi
 
             app.UseMvc(rutas=>
             {
-             
-                  rutas.MapRoute("default", "{controller=Noticia}/{action=Index}/{id?}");
-              
+            rutas.MapRoute(name: "default",
+                           template:"{controller=Finca}/{action=getFinca}/{id?}"
+                    );                
             });
         }
     }

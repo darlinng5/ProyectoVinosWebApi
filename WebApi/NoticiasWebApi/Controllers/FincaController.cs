@@ -30,6 +30,7 @@ namespace NoticiasWebApi.Controllers
         {
             return await _Db.Finca.ToArrayAsync();
         }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Finca>> getFinca(int id)
         {

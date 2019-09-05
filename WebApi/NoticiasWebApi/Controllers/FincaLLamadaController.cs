@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NoticiasWebApi;
+using ProyectoVinowWebApi.AppServices;
 using ProyectoVinowWebApi.Models;
 
 namespace ProyectoVinowWebApi.Controllers
@@ -15,38 +16,38 @@ namespace ProyectoVinowWebApi.Controllers
     public class FincaLLamadaController : ControllerBase
     {
         public readonly DBContext _Db;
-        public FincaLLamadaController(DBContext _DBcontext)
+        public readonly LlamadaAppServices _llamadaAppServices;
+
+        public FincaLLamadaController(DBContext _DBcontext, LlamadaAppServices llamadaAppServices)
         {
             _Db = _DBcontext;
+            _llamadaAppServices = llamadaAppServices;
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<LLamadasAFinca>>> getFincaLLamadas()
         {
-            return await _Db.LlamadasAFinca.Include(x => x.FincaProceso).ToArrayAsync();
+            return await _Db.LLamadasAFinca.ToArrayAsync();
         }
-        [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<LLamadasAFinca>>> getFincaLLamada(int id)
-        {
 
-            return await _Db.LlamadasAFinca.Where(x => x.idProceso == id).OrderByDescending(z => z.idLLamada).ToArrayAsync();
+        [HttpGet("{id}")]
+        public async Task<ActionResult<LLamadasAFinca>> getFincaLLamada(int id)
+        {
+            return await _Db.LLamadasAFinca.FirstOrDefaultAsync(l => l.idLLamada == id);
         }
+
 
         [HttpPost]
         public async Task<ActionResult<LLamadasAFinca>> postFincaLLamada(LLamadasAFinca llamada)
         {
-            try
+            var respuesta = await _llamadaAppServices.HacerLlamada(llamada);
+            if (respuesta == null)
             {
-               
-                _Db.LlamadasAFinca.Add(llamada);
-                await _Db.SaveChangesAsync();
-
-                return Ok();
+                return Ok("Guardado exitosamente");
             }
-            catch (Exception e)
+            else
             {
-
-                return BadRequest(e);
+                return BadRequest(respuesta);
             }
 
         }
@@ -69,12 +70,12 @@ namespace ProyectoVinowWebApi.Controllers
         [HttpDelete("{idLLamada}")]
         public async Task<ActionResult> deleteFincaLLamada(int idLLamada)
         {
-            var llamada = await _Db.LlamadasAFinca.FindAsync(idLLamada);
+            var llamada = await _Db.LLamadasAFinca.FindAsync(idLLamada);
             if (llamada == null)
             {
                 return NotFound();
             }
-            _Db.LlamadasAFinca.Remove(llamada);
+            _Db.LLamadasAFinca.Remove(llamada);
             await _Db.SaveChangesAsync();
             return Ok();
         }

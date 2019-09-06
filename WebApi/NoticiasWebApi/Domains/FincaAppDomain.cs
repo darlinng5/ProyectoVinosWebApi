@@ -10,7 +10,7 @@ namespace ProyectoVinowWebApi.Domains
     {
         public string RegistrarFinca(Finca finca)
         {
-            int maximoCarctereseParaNombre = 10;
+     
 
             if (finca == null)
             {

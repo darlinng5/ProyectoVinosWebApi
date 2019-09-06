@@ -2544,7 +2544,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.9"
         },
         "compile": {
@@ -4055,11 +4054,12 @@
       ]
     },
     "runtime.native.System.Net.Http/4.3.0": {
-      "sha512": "ZVuZJqnnegJhd2k/PtAbbIcZ3aZeITq3sj06oKfMBSfphW3HDmk/t4ObvbOk/JA/swGR0LNqMksAh/f7gpTROg==",
+      "sha512": "guqHgQOK2eUgtJae2VKjNawBn1xjC0hfOt5wASHa60XHbIdCsQlqtvMsFG+3hy7yp88V+gi9fZCjubuDkeakcQ==",
       "type": "package",
       "path": "runtime.native.system.net.http/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -4120,7 +4120,7 @@
       ]
     },
     "runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.Apple/4.3.0": {
-      "sha512": "kVXCuMTrTlxq4XOOMAysuNwsXWpYeboGddNGpIgNSZmv1b6r/s/DPk0fYMB7Q5Qo4bY68o48jt4T4y5BVecbCQ==",
+      "sha512": "Kh9W4agE0r/hK8AX1LvyQI2NrKHBL8pO0gRoDTdDb0LL6Ta1Z2OtFx3lOaAE0ZpCUc/dt9Wzs3rA7a3IsKdOVA==",
       "type": "package",
       "path": "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.apple/4.3.0",
       "files": [
@@ -4454,11 +4454,12 @@
       ]
     },
     "System.Collections.Specialized/4.0.1": {
-      "sha512": "0kYjWyJr2cFYcCzSEq0P8TucdWXiH32OuG2JzI+Dln68Q/wHnUcFSSGitnRJnYV37Alt4x+7GJr4uic+wa2xbg==",
+      "sha512": "/HKQyVP0yH1I0YtK7KJL/28snxHNH/bi+0lgk/+MbURF6ULhAE31MDI+NZDerNWu264YbxklXCCygISgm+HMug==",
       "type": "package",
       "path": "system.collections.specialized/4.0.1",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4619,11 +4620,12 @@
       ]
     },
     "System.ComponentModel.Primitives/4.1.0": {
-      "sha512": "8mhZEjM6a0p6ddeslFmoL0C45+EZvW3YLN8xeo2cpLaXHYgAV32t/gZMpP9EWKewZdigXdGNZNrEPieCmx3XZA==",
+      "sha512": "sc/7eVCdxPrp3ljpgTKVaQGUXiW05phNWvtv/m2kocXqrUQvTVWKou1Edas2aDjTThLPZOxPYIGNb/HN0QjURg==",
       "type": "package",
       "path": "system.componentmodel.primitives/4.1.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4657,11 +4659,12 @@
       ]
     },
     "System.ComponentModel.TypeConverter/4.1.0": {
-      "sha512": "6jPUD/Ny1ofhYg+aNbnD+CQxSHD2nROxEISqZlnniu4FxfGa2x4fhoLqthUCdejOeWDu8cMoykiK+tQFVjXujg==",
+      "sha512": "MnDAlaeJZy9pdB5ZdOlwdxfpI+LJQ6e0hmH7d2+y2LkiD8DRJynyDYl4Xxf3fWFm7SbEwBZh4elcfzONQLOoQw==",
       "type": "package",
       "path": "system.componentmodel.typeconverter/4.1.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -8201,24 +8204,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\edwin\\.nuget\\packages\\": {},
+    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\edwin\\Documents\\GitHub Projects\\ProyectoVinosWebApi\\WebApi\\TestProyectoVinos\\TestProyectoVinos.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\ProyectoVinosWebApi\\WebApi\\TestProyectoVinos\\TestProyectoVinos.csproj",
       "projectName": "TestProyectoVinos",
-      "projectPath": "C:\\Users\\edwin\\Documents\\GitHub Projects\\ProyectoVinosWebApi\\WebApi\\TestProyectoVinos\\TestProyectoVinos.csproj",
-      "packagesPath": "C:\\Users\\edwin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\edwin\\Documents\\GitHub Projects\\ProyectoVinosWebApi\\WebApi\\TestProyectoVinos\\obj\\",
+      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\ProyectoVinosWebApi\\WebApi\\TestProyectoVinos\\TestProyectoVinos.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\ProyectoVinosWebApi\\WebApi\\TestProyectoVinos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\edwin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -8230,8 +8236,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\edwin\\Documents\\GitHub Projects\\ProyectoVinosWebApi\\WebApi\\NoticiasWebApi\\ProyectoVinowWebApi.csproj": {
-              "projectPath": "C:\\Users\\edwin\\Documents\\GitHub Projects\\ProyectoVinosWebApi\\WebApi\\NoticiasWebApi\\ProyectoVinowWebApi.csproj"
+            "C:\\Users\\User\\Documents\\GitHub\\ProyectoVinosWebApi\\WebApi\\NoticiasWebApi\\ProyectoVinowWebApi.csproj": {
+              "projectPath": "C:\\Users\\User\\Documents\\GitHub\\ProyectoVinosWebApi\\WebApi\\NoticiasWebApi\\ProyectoVinowWebApi.csproj"
             }
           }
         }
@@ -8258,6 +8264,7 @@
             "version": "[15.9.0, )"
           },
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true

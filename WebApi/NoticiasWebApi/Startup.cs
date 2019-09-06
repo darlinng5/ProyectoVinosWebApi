@@ -44,7 +44,7 @@ namespace NoticiasWebApi
             services.AddScoped<LlamadaFincaDomain>();
             services.AddScoped<ProcesoAppServices>();
             services.AddScoped<ProcesoDomain>();
-            services.AddDbContext<DBContext>(opciones => opciones.UseSqlServer("Data Source=DESKTOP-KFVMJ2G;Initial Catalog=VinosDB;Trusted_Connection=True"));
+            services.AddDbContext<DBContext>(opciones => opciones.UseSqlServer("Server=tcp:serverazurevinos.database.windows.net,1433;Initial Catalog=bdazurevinos;Persist Security Info=False;User ID=darlinng5;Password=D@rlinno3l2207;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
 
             services.AddTransient<ProyectoServices, ProyectoServices>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);

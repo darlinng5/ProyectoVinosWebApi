@@ -8,6 +8,9 @@ using Microsoft.EntityFrameworkCore;
 using NoticiasWebApi;
 using NoticiasWebApi.Models;
 using ProyectoVinowWebApi.Models;
+using ProyectoVinowWebApi.Controllers;
+using ProyectoVinowWebApi.AppServices;
+using ProyectoVinowWebApi.Domains;
 
 namespace ProyectoVinowWebApi.Controllers
 {
@@ -42,10 +45,12 @@ namespace ProyectoVinowWebApi.Controllers
             {
                 evaluacion.estado = PropiedadesDeModelos.estadoCreado;
 
-                //_Db.FincaEvaluacion.Add(evaluacion);
-                //await _Db.SaveChangesAsync();
-                //var fincaProceso = new FincaProcesoController(_Db);
-                //await fincaProceso.cambiarEstadoFincaProceso(evaluacion.idProceso, PropiedadesDeModelos.estadoEvaluado);
+                _Db.FincaEvaluacion.Add(evaluacion);
+                await _Db.SaveChangesAsync();
+                var DomainProceso = new ProcesoDomain();
+                var procesoAppServices = new ProcesoAppServices(_Db, DomainProceso);
+                var fincaProceso = new FincaProcesoController(_Db, procesoAppServices);
+                await fincaProceso.cambiarEstadoFincaProceso(evaluacion.idProceso, PropiedadesDeModelos.estadoEvaluado);
                 return Ok();
             }
             catch (Exception e)

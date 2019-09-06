@@ -18,8 +18,8 @@ namespace ProyectoVinowWebApi.Domains
             }
 
 
-            int maximoCarctereseParaNombre = 20;
-            var nombreEsDemasiadoLargo = finca.nombre.Count() > maximoCarctereseParaNombre;
+            int maximoCarcteresParaNombre = 20;
+            var nombreEsDemasiadoLargo = finca.nombre.Count() > maximoCarcteresParaNombre;
             var nombreEstaEnBlanco = finca.nombre == string.Empty;
 
             if (nombreEstaEnBlanco)

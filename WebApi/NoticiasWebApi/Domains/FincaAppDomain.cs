@@ -29,7 +29,7 @@ namespace ProyectoVinowWebApi.Domains
 
             if (nombreEsDemasiadoLargo)
             {
-                return "El nombre contiene mas de "+maximoCarctereseParaNombre + " Caracteres";
+                return "El nombre contiene mas de "+ maximoCarcteresParaNombre + " Caracteres";
             }
 
             if (finca.estado != "Iniciado")

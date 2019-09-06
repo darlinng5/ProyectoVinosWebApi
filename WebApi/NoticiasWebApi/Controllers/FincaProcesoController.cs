@@ -12,12 +12,11 @@ using ProyectoVinowWebApi.AppServices;
 
 namespace ProyectoVinowWebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/proceso")]
     [ApiController]
     public class FincaProcesoController : ControllerBase
-    {
-       
-        public readonly DBContext _Db;
+    {   
+        private readonly DBContext _Db;
         public readonly ProcesoAppServices _procesoAppServices;
         public FincaProcesoController(DBContext _DBcontext, ProcesoAppServices procesoAppServices)
         {
@@ -29,6 +28,7 @@ namespace ProyectoVinowWebApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<FincaProceso>>> getFincaProcesos()
         {
+            //return await _Db.FincaProceso.ToArrayAsync();
             return await _Db.FincaProceso.Include(x => x.Finca).Include(f => f.Productos).Include(g=>g.Productos.Semilla).ToArrayAsync();
         }
         [HttpGet("{id}")]

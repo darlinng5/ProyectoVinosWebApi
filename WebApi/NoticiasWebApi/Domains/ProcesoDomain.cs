@@ -8,7 +8,7 @@ namespace ProyectoVinowWebApi.Domains
 {
     public class ProcesoDomain
     {
-        public string validarPostProceso(FincaProceso fincaProceso)
+        public string ValidarPostProceso(FincaProceso fincaProceso)
         {
             int tamañoMaximoDelNombre = 30;
 

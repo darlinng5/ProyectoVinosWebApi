@@ -49,8 +49,8 @@ namespace ProyectoVinowWebApi.Controllers
                 await _Db.SaveChangesAsync();
                 var DomainProceso = new ProcesoDomain();
                 var procesoAppServices = new ProcesoAppServices(_Db, DomainProceso);
-                var fincaProceso = new FincaProcesoController(_Db, procesoAppServices);
-                await fincaProceso.cambiarEstadoFincaProceso(evaluacion.idProceso, PropiedadesDeModelos.estadoEvaluado);
+                //var fincaProceso = new FincaProcesoController(_Db, procesoAppServices);
+               // await fincaProceso.cambiarEstadoFincaProceso(evaluacion.idProceso, PropiedadesDeModelos.estadoEvaluado);
                 return Ok();
             }
             catch (Exception e)

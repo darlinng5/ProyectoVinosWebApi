@@ -22,9 +22,9 @@ namespace ProyectoVinowWebApi.AppServices
         public async Task<string> RegistrarFinca(FincaProceso proceso)
         {
 
-            var respuesta = _procesoDomain.validarPostProceso(proceso);
+            var respuesta = _procesoDomain.ValidarPostProceso(proceso);
 
-            bool vieneConErrorDelDomainDeProceso = respuesta != null;
+            var vieneConErrorDelDomainDeProceso = respuesta != null;
 
             if (vieneConErrorDelDomainDeProceso)
             {

@@ -10,7 +10,7 @@ using NoticiasWebApi.Models;
 
 namespace ProyectoVinowWebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/productos")]
     [ApiController]
     public class ProductoController : ControllerBase
     {

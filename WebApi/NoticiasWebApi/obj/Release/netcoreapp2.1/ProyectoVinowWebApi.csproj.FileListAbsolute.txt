@@ -1,0 +1,14 @@
+C:\Users\User\Documents\GitHub\ProyectoVinosWebApi\WebApi\NoticiasWebApi\bin\Release\netcoreapp2.1\ProyectoVinowWebApi.deps.json
+C:\Users\User\Documents\GitHub\ProyectoVinosWebApi\WebApi\NoticiasWebApi\bin\Release\netcoreapp2.1\ProyectoVinowWebApi.runtimeconfig.json
+C:\Users\User\Documents\GitHub\ProyectoVinosWebApi\WebApi\NoticiasWebApi\bin\Release\netcoreapp2.1\ProyectoVinowWebApi.runtimeconfig.dev.json
+C:\Users\User\Documents\GitHub\ProyectoVinosWebApi\WebApi\NoticiasWebApi\bin\Release\netcoreapp2.1\ProyectoVinowWebApi.dll
+C:\Users\User\Documents\GitHub\ProyectoVinosWebApi\WebApi\NoticiasWebApi\bin\Release\netcoreapp2.1\ProyectoVinowWebApi.pdb
+C:\Users\User\Documents\GitHub\ProyectoVinosWebApi\WebApi\NoticiasWebApi\obj\Release\netcoreapp2.1\ProyectoVinowWebApi.csprojAssemblyReference.cache
+C:\Users\User\Documents\GitHub\ProyectoVinosWebApi\WebApi\NoticiasWebApi\obj\Release\netcoreapp2.1\ProyectoVinowWebApi.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\ProyectoVinosWebApi\WebApi\NoticiasWebApi\obj\Release\netcoreapp2.1\ProyectoVinowWebApi.RazorAssemblyInfo.cache
+C:\Users\User\Documents\GitHub\ProyectoVinosWebApi\WebApi\NoticiasWebApi\obj\Release\netcoreapp2.1\ProyectoVinowWebApi.RazorAssemblyInfo.cs
+C:\Users\User\Documents\GitHub\ProyectoVinosWebApi\WebApi\NoticiasWebApi\obj\Release\netcoreapp2.1\ProyectoVinowWebApi.AssemblyInfoInputs.cache
+C:\Users\User\Documents\GitHub\ProyectoVinosWebApi\WebApi\NoticiasWebApi\obj\Release\netcoreapp2.1\ProyectoVinowWebApi.AssemblyInfo.cs
+C:\Users\User\Documents\GitHub\ProyectoVinosWebApi\WebApi\NoticiasWebApi\obj\Release\netcoreapp2.1\ProyectoVinowWebApi.RazorTargetAssemblyInfo.cache
+C:\Users\User\Documents\GitHub\ProyectoVinosWebApi\WebApi\NoticiasWebApi\obj\Release\netcoreapp2.1\ProyectoVinowWebApi.dll
+C:\Users\User\Documents\GitHub\ProyectoVinosWebApi\WebApi\NoticiasWebApi\obj\Release\netcoreapp2.1\ProyectoVinowWebApi.pdb

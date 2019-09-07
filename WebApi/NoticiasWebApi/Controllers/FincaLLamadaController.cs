@@ -31,9 +31,10 @@ namespace ProyectoVinowWebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<LLamadasAFinca>> getFincaLLamada(int id)
+        public async Task<ActionResult<IEnumerable<LLamadasAFinca>>> getFincaLLamada(int id)
         {
-            return await _Db.LLamadasAFinca.FirstOrDefaultAsync(l => l.idLLamada == id);
+
+            return await _Db.LLamadasAFinca.Where(x => x.idProceso == id).OrderByDescending(z => z.idLLamada).ToArrayAsync();
         }
 
 

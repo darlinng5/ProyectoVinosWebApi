@@ -20,9 +20,11 @@ namespace ProyectoVinowWebApi.Controllers
     {
 
         public readonly DBContext _Db;
-        public FincaEvaluacionController(DBContext _DBcontext)
+        private readonly EvaluacionAppServices _evaluacionAppServices;
+        public FincaEvaluacionController(DBContext _DBcontext, EvaluacionAppServices evaluacionAppServices)
         {
             _Db = _DBcontext;
+            _evaluacionAppServices = evaluacionAppServices;
         }
 
         [HttpGet]
@@ -41,24 +43,15 @@ namespace ProyectoVinowWebApi.Controllers
         [HttpPost]
         public async Task<ActionResult<FincaEvaluacion>> postFincaEvaluacion(FincaEvaluacion evaluacion)
         {
-            try
+            var respuestaAppServices = await _evaluacionAppServices.IngresarEvaluacion(evaluacion);
+            if (respuestaAppServices == null)
             {
-                evaluacion.estado = PropiedadesDeModelos.estadoCreado;
-
-                _Db.FincaEvaluacion.Add(evaluacion);
-                await _Db.SaveChangesAsync();
-                var DomainProceso = new ProcesoDomain();
-                var procesoAppServices = new ProcesoAppServices(_Db, DomainProceso);
-                //var fincaProceso = new FincaProcesoController(_Db, procesoAppServices);
-               // await fincaProceso.cambiarEstadoFincaProceso(evaluacion.idProceso, PropiedadesDeModelos.estadoEvaluado);
-                return Ok();
+                return Ok("Exito al guardar la finca");
             }
-            catch (Exception e)
+            else
             {
-
-                return BadRequest(e);
+                return BadRequest(respuestaAppServices);
             }
-
         }
 
         [HttpPut("{idEvaluacion}")]

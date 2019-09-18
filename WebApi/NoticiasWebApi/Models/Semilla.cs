@@ -15,9 +15,6 @@ namespace ProyectoVinowWebApi.Models
         public string descripcion { get; set; }
         public string estado { get; set; }
 
-
-
-
         public class Map
         {
             public Map(EntityTypeBuilder<Semilla> ebSemilla)

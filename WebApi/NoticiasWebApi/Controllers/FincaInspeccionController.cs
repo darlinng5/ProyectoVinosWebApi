@@ -18,9 +18,11 @@ namespace ProyectoVinowWebApi.Controllers
     public class FincaInspeccionController : ControllerBase
     {
         public readonly DBContext _Db;
-        public FincaInspeccionController(DBContext _DBcontext)
+        private readonly InspeccionAppServices _inspeccionAppServices;
+        public FincaInspeccionController(DBContext _DBcontext, InspeccionAppServices inspeccionAppServices)
         {
             _Db = _DBcontext;
+            _inspeccionAppServices = inspeccionAppServices;
         }
 
         [HttpGet]
@@ -38,24 +40,15 @@ namespace ProyectoVinowWebApi.Controllers
         [HttpPost]
         public async Task<ActionResult<FincaInspeccion>> postFincaInspeccion(FincaInspeccion inspeccion)
         {
-            try
+            var respuestaAppServices = await _inspeccionAppServices.IngresarInspeccion(inspeccion);
+            if (respuestaAppServices == null)
             {
-
-                _Db.FincaInspeccion.Add(inspeccion);
-                await _Db.SaveChangesAsync();
-                var DomainProceso = new ProcesoDomain();
-                var procesoAppServices = new ProcesoAppServices(_Db, DomainProceso);
-               // var fincaProceso = new FincaProcesoController(_Db, procesoAppServices);
-               // await fincaProceso.cambiarEstadoFincaProceso(inspeccion.idProceso, PropiedadesDeModelos.estadoInspeccionado);
-
-                return Ok();
+                return Ok("Exito al guardar la finca");
             }
-            catch (Exception e)
+            else
             {
-
-                return BadRequest(e);
+                return BadRequest(respuestaAppServices);
             }
-
         }
 
         [HttpPut("{idInspeccion}")]

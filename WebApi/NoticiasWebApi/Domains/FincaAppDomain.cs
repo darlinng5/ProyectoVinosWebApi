@@ -10,7 +10,7 @@ namespace ProyectoVinowWebApi.Domains
     {
         public string RegistrarFinca(Finca finca)
         {
-     
+            
 
             if (finca == null)
             {
@@ -29,7 +29,8 @@ namespace ProyectoVinowWebApi.Domains
 
             if (nombreEsDemasiadoLargo)
             {
-                return "El nombre contiene mas de "+ maximoCarcteresParaNombre + " Caracteres";
+                return "El nombre contiene mas caracteres de lo permitido.";
+
             }
 
             if (finca.estado != "Iniciado")

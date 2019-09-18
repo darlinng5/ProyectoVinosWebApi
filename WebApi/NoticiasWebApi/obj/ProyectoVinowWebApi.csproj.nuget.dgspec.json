@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\docs\\Personal\\u\\2019\\III Periodo\\Ingenieria de Software\\Proyecto\\WebApi\\NoticiasWebApi\\ProyectoVinowWebApi.csproj": {}
+    "C:\\Users\\User\\Documents\\GitHub\\ProyectoVinosWebApi\\WebApi\\NoticiasWebApi\\ProyectoVinowWebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\docs\\Personal\\u\\2019\\III Periodo\\Ingenieria de Software\\Proyecto\\WebApi\\NoticiasWebApi\\ProyectoVinowWebApi.csproj": {
+    "C:\\Users\\User\\Documents\\GitHub\\ProyectoVinosWebApi\\WebApi\\NoticiasWebApi\\ProyectoVinowWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\docs\\Personal\\u\\2019\\III Periodo\\Ingenieria de Software\\Proyecto\\WebApi\\NoticiasWebApi\\ProyectoVinowWebApi.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\ProyectoVinosWebApi\\WebApi\\NoticiasWebApi\\ProyectoVinowWebApi.csproj",
         "projectName": "ProyectoVinowWebApi",
-        "projectPath": "C:\\Users\\User\\Desktop\\docs\\Personal\\u\\2019\\III Periodo\\Ingenieria de Software\\Proyecto\\WebApi\\NoticiasWebApi\\ProyectoVinowWebApi.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\GitHub\\ProyectoVinosWebApi\\WebApi\\NoticiasWebApi\\ProyectoVinowWebApi.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\docs\\Personal\\u\\2019\\III Periodo\\Ingenieria de Software\\Proyecto\\WebApi\\NoticiasWebApi\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\GitHub\\ProyectoVinosWebApi\\WebApi\\NoticiasWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

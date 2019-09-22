@@ -22,7 +22,7 @@ namespace ProyectoVinowWebApi.AppServices
 
         public async Task<string> IngresarEvaluacion(FincaEvaluacion fincaEvaluacion)
         {
-            var respuestaDomain = _EvaluacionDomain.validarEvaluacion();
+            var respuestaDomain = _EvaluacionDomain.validarEvaluacion(fincaEvaluacion);
             bool errorEnDomain = respuestaDomain != null;
             if (errorEnDomain)
             {

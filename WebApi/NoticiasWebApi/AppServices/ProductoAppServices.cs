@@ -21,7 +21,7 @@ namespace ProyectoVinowWebApi.AppServices
 
         public async Task<string> IngresarProducto(Productos producto)
         {
-            var respuestaProductoDomain = _productoDomain.validarIngresoProducto();
+            var respuestaProductoDomain = _productoDomain.validarIngresoProducto(producto);
             bool ErrorEnDomain = respuestaProductoDomain != null;
 
             if (ErrorEnDomain)

@@ -10,10 +10,6 @@ namespace TestProyectoVinos.TestsDelProyecto
     [TestClass]
    public class TestDeLLamadasFinca
     {
-        public readonly DBContext _Db;
-        public readonly LlamadaAppServices llamada;
-        public readonly LLamadasAFinca _LlamadasAFinca;
-
         [TestMethod]
         public void validarIdDeProcesoDeFincaLLamada()
         {
@@ -47,10 +43,10 @@ namespace TestProyectoVinos.TestsDelProyecto
         public LLamadasAFinca LlamadaAfincaData()
         {
             LLamadasAFinca llamada = new LLamadasAFinca();
-            llamada.fechaLLamada = DateTime.Now;
-            llamada.fechaVisita = DateTime.Today;
+            llamada.fechaLLamada = DateTime.Today;
+            llamada.fechaVisita = DateTime.Now;
             llamada.observacion = "Ninguna";
-            llamada.idProceso = 1;
+            llamada.idProceso = 0;
 
             return llamada;
         }

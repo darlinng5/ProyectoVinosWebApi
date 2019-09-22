@@ -23,7 +23,7 @@ namespace ProyectoVinowWebApi.AppServices
 
         public async Task<string> IngresarInspeccion(FincaInspeccion inspeccion)
         {
-            var respuestaDomain = _InspeccionDomain.validarInspeccion();
+            var respuestaDomain = _InspeccionDomain.validarInspeccion(inspeccion);
             bool errorEnDomain = respuestaDomain != null;
 
             if (errorEnDomain)

@@ -22,7 +22,7 @@ namespace ProyectoVinowWebApi.AppServices
 
         public async Task<string> ingresarSemilla(Semilla semilla)
         {
-            var respuestaSemillaDomain = _semillaDomain.validarIngresoSemilla();
+            var respuestaSemillaDomain = _semillaDomain.validarIngresoSemilla(semilla);
             bool vieneErrorDelDomain = respuestaSemillaDomain != null;
 
             if (vieneErrorDelDomain)

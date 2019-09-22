@@ -10,8 +10,6 @@ namespace ProyectoVinowWebApi.Domains
     {
         public string RegistrarFinca(Finca finca)
         {
-            
-
             if (finca == null)
             {
                 return "Por favor ingrese datos para la finca";
@@ -22,7 +20,7 @@ namespace ProyectoVinowWebApi.Domains
             var nombreEsDemasiadoLargo = finca.nombre.Count() > maximoCarcteresParaNombre;
             var nombreEstaEnBlanco = finca.nombre == string.Empty;
 
-            if (nombreEstaEnBlanco)
+            if (nombreEstaEnBlanco) 
             {
                 return "El nombre no puede ser nulo.";
             }

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NoticiasWebApi;
 using NoticiasWebApi.Models;
+using ProyectoVinowWebApi.AppServices;
 using ProyectoVinowWebApi.Models;
 
 namespace ProyectoVinowWebApi.Controllers
@@ -16,9 +17,12 @@ namespace ProyectoVinowWebApi.Controllers
     public class ProductoPresentacionController : ControllerBase
     {
         public readonly DBContext _Db;
-        public ProductoPresentacionController(DBContext _DBcontext)
+        public readonly ProductoAppServices _productoAppServices;
+
+        public ProductoPresentacionController(DBContext _DBcontext, ProductoAppServices productoAppServices)
         {
             _Db = _DBcontext;
+            _productoAppServices = productoAppServices;
         }
 
         [HttpGet]

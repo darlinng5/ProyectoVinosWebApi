@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NoticiasWebApi.Services;
-using ProyectoVinowWebApi.AplicationServices;
 using ProyectoVinowWebApi.AppServices;
 using ProyectoVinowWebApi.Domains;
 
@@ -35,15 +29,22 @@ namespace NoticiasWebApi
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
-
-        
+            
             services.AddScoped<FincaAppDomain>();
             services.AddScoped<FincaAppServices>();
             services.AddScoped<LlamadaAppServices>();
             services.AddScoped<LlamadaFincaDomain>();
             services.AddScoped<ProcesoAppServices>();
             services.AddScoped<ProcesoDomain>();
+            services.AddScoped<EvaluacionAppServices>();
+            services.AddScoped<EvaluacionDomain>();
+            services.AddScoped<InspeccionAppServices>();
+            services.AddScoped<InspeccionDomain>();
+            services.AddScoped<SemillaAppServices>();
+            services.AddScoped<SemillaDomain>();
+            services.AddScoped<ProductoAppServices>();
+            services.AddScoped<ProductoDomain>();
+            services.AddDbContext<DBContext>(opciones => opciones.UseSqlServer("Data Source=DESKTOP-KFVMJ2G;Initial Catalog=VinosDB;Trusted_Connection=True"));
             services.AddDbContext<DBContext>(opciones => opciones.UseSqlServer("Server=tcp:serverazurevinos.database.windows.net,1433;Initial Catalog=bdazurevinos;Persist Security Info=False;User ID=darlinng5;Password=D@rlinno3l2207;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
 
             services.AddTransient<ProyectoServices, ProyectoServices>();

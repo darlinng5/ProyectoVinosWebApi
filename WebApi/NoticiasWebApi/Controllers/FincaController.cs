@@ -50,8 +50,6 @@ namespace ProyectoVinowWebApi.Controllers
             {
                 return BadRequest(respuesta);
             }
-
-
         }
 
         [HttpPut("{idFinca}")]

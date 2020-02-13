@@ -16,7 +16,7 @@ script:
   # Compilamos el proyecto
 - dotnet build
   # Ejecutamos las pruebas unitarias
-- dotnet test PruebasUnitarias/PruebasUnitarias.csproj
+ #- dotnet test PruebasUnitarias/PruebasUnitarias.csproj
 # No queremos que nos notifique por email los resultados
 -notifications:
 -  email: false

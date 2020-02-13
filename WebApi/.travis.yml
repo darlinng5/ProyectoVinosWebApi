@@ -9,6 +9,7 @@ os:
   - linux
   - osx
 # Comando que queremos ejecutar ANTES de compilar  
+before_install: gem install bundler
 install:
 - dotnet restore
 # Script de compilacion

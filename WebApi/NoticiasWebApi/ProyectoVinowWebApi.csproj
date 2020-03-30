@@ -23,4 +23,12 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="AppServices\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Domains\" />
+    <Folder Include="resources\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>

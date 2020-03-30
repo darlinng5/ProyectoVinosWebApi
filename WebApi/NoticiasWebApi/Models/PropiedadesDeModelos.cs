@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace NoticiasWebApi.Models
+namespace ProyectoVinowWebApi.Models
 {
     public static class PropiedadesDeModelos
     {
@@ -27,8 +27,5 @@ namespace NoticiasWebApi.Models
         public static string valorUnitario = "valorUnitario";
         public static string cantidad = "cantidad";
         public static string esPagoAlContado = "esPagoAlContado";
-
-
-
     }
 }

@@ -6,8 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NoticiasWebApi.Services;
-using ProyectoVinowWebApi.AppServices;
-using ProyectoVinowWebApi.Domains;
+
 
 namespace NoticiasWebApi
 {
@@ -30,22 +29,12 @@ namespace NoticiasWebApi
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
             
-            services.AddScoped<FincaAppDomain>();
-            services.AddScoped<FincaAppServices>();
-            services.AddScoped<LlamadaAppServices>();
-            services.AddScoped<LlamadaFincaDomain>();
-            services.AddScoped<ProcesoAppServices>();
-            services.AddScoped<ProcesoDomain>();
-            services.AddScoped<EvaluacionAppServices>();
-            services.AddScoped<EvaluacionDomain>();
-            services.AddScoped<InspeccionAppServices>();
-            services.AddScoped<InspeccionDomain>();
-            services.AddScoped<SemillaAppServices>();
-            services.AddScoped<SemillaDomain>();
-            services.AddScoped<ProductoAppServices>();
-            services.AddScoped<ProductoDomain>();
-            services.AddDbContext<DBContext>(opciones => opciones.UseSqlServer("Data Source=DESKTOP-KFVMJ2G;Initial Catalog=VinosDB;Trusted_Connection=True"));
-            services.AddDbContext<DBContext>(opciones => opciones.UseSqlServer("Server=tcp:serverazurevinos.database.windows.net,1433;Initial Catalog=bdazurevinos;Persist Security Info=False;User ID=darlinng5;Password=D@rlinno3l2207;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
+            //services.AddScoped<FincaAppDomain>();
+            //services.AddScoped<FincaAppServices>();
+            //aqui va el appDomain y el AppServices
+
+            services.AddDbContext<DBContext>(opciones => opciones.UseSqlServer("Data Source=DESKTOP-KFVMJ2G;Initial Catalog=greencollectionsDB;Trusted_Connection=True"));
+            //services.AddDbContext<DBContext>(opciones => opciones.UseSqlServer("Server = 207.246.81.54; Catálogo inicial = greencollectionsDB; Persist Security Info = False; User ID = greencollections; Password = Q% 9f68gg; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = Falso; Tiempo de espera de conexión = 30; "));
 
             services.AddTransient<ProyectoServices, ProyectoServices>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);

@@ -12535,11 +12535,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\edwin\\Documents\\GitHub Projects\\ProyectoVinosWebApi\\WebApi\\NoticiasWebApi\\ProyectoVinowWebApi.csproj",
+      "projectUniqueName": "C:\\Users\\edwin\\Pictures\\Screenshots\\ProyectoVinosWebApi\\WebApi\\NoticiasWebApi\\ProyectoVinowWebApi.csproj",
       "projectName": "ProyectoVinowWebApi",
-      "projectPath": "C:\\Users\\edwin\\Documents\\GitHub Projects\\ProyectoVinosWebApi\\WebApi\\NoticiasWebApi\\ProyectoVinowWebApi.csproj",
+      "projectPath": "C:\\Users\\edwin\\Pictures\\Screenshots\\ProyectoVinosWebApi\\WebApi\\NoticiasWebApi\\ProyectoVinowWebApi.csproj",
       "packagesPath": "C:\\Users\\edwin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\edwin\\Documents\\GitHub Projects\\ProyectoVinosWebApi\\WebApi\\NoticiasWebApi\\obj\\",
+      "outputPath": "C:\\Users\\edwin\\Pictures\\Screenshots\\ProyectoVinosWebApi\\WebApi\\NoticiasWebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
